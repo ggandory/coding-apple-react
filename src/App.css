@@ -5,7 +5,20 @@
 body {
   font-family: "numumsquare";
 }
-
+.changeTitle {
+  height: 30px;
+  width: 90px;
+  display: flex;
+  padding: 10px;
+  background-color: green;
+  text-align: center;
+  margin: 10px;
+}
+.modal {
+  padding: 20px;
+  background-color: #eee;
+  margin-top: 20px;
+}
 .black-nav {
   background: black;
   width: 100%;
@@ -14,6 +27,12 @@ body {
   padding: 20px;
   font-weight: 600;
   font-size: 20px;
+}
+.list {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .App-logo {
   height: 40vmin;
