@@ -78,5 +78,12 @@ function Modal() {
     </>
   );
 }
+/*만약 상세페이지를 만들고 싶다면
+1. 라우터 설치 되어 있어야 하고(npm install react-router-dom)
 
+2. App.js 파일 수정
+기존 코드에 React Router를 추가하여 각 글 제목을 클릭하면 상세페이지로 이동하도록 설정한다.
+
+	3.	Detail 컴포넌트 추가
+상세페이지를 위한 Detail 컴포넌트를 추가하고, 각 글 제목을 클릭하면 해당 글의 상세페이지로 이동하도록 설정하도록 한다. */
 export default App;
