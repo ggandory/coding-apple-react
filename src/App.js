@@ -16,6 +16,7 @@ function App() {
     "앞으로 개발자의 미래는?",
   ]);
   const [thumb, setThumb] = useState(0);
+  const [showImage, setShowImage] = useState(false); // 이미지 표시 여부 상태 추가
   const posts = "강남 고기 맛집";
   const newArray = [...글제목]; //deep copy로써 값공유x 서로 독립적인 값을 가지는 복사이다. (state는 직접 건드리는건 옳지 못함)
   newArray[0] = "여자코트 추천";
@@ -63,6 +64,23 @@ function App() {
 
       <Modal /**html을 한단어로 줄여서 쓸 수 있는 방법: 리액트의 component문법임 */
       ></Modal>
+      {/* 이미지 표시 토글 버튼 추가 */}
+      <button
+        onClick={() => {
+          setShowImage(!showImage);
+        }}
+      >
+        이미지 {showImage ? "숨기기" : "보이기"}
+      </button>
+
+      {/* showImage 상태에 따라 이미지 표시 */}
+      {showImage && (
+        <img
+          src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconsumer.or.kr%2Fnews%2Fphoto%2F202407%2F26604_33934_2957.jpg&type=l340_165"
+          alt="Image"
+          style={{ width: "200px" }}
+        />
+      )}
     </div>
   );
 }
