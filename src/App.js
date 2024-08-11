@@ -17,7 +17,7 @@ function App() {
   ]);
   const [thumb, setThumb] = useState(0);
   const [showImage, setShowImage] = useState(false); // 이미지 표시 여부 상태 추가
-  const post = "강남 고기 맛집";
+  const posts = "강남 고기 맛집";
   const newArray = [...글제목]; //deep copy로써 값공유x 서로 독립적인 값을 가지는 복사이다. (state는 직접 건드리는건 옳지 못함)
   newArray[0] = "여자코트 추천";
   newArray.sort();
@@ -61,6 +61,7 @@ function App() {
         <p>2월 19일 발행</p>
         <hr />
       </div>
+      <listUp numb={2} numb1={19} />
 
       <Modal /**html을 한단어로 줄여서 쓸 수 있는 방법: 리액트의 component문법임 */
       ></Modal>
@@ -96,6 +97,54 @@ function Modal() {
     </>
   );
 }
+
+function ListUp({ numb = 1, numb1 = 18 }) {
+  return (
+    <>
+      <div className="list">
+        <h3>{글제목[numb]}</h3>
+        <p>2월 {numb1}일 발행</p>
+        <hr />
+      </div>
+    </>
+  );
+}
+
+/**
+ * DefaultProps 사용
+function ListUp({ numb, numb1 }) {
+  return (
+    <div className="list">
+      <h3>{글제목[numb]}</h3>
+      <p>2월 {numb1}일 발행</p>
+      <hr />
+    </div>
+  );
+}
+
+ListUp.defaultProps = {
+  numb: 1,
+  numb1: 18,
+};
+이런식으로도 쓸 수 있네
+
+그리고
+객체 형태로 props 받기
+function ListUp({ data }) {
+  const { numb = 1, numb1 = 18 } = data;
+  return (
+    <div className="list">
+      <h3>{글제목[numb]}</h3>
+      <p>2월 {numb1}일 발행</p>
+      <hr />
+    </div>
+  );
+}
+
+// 사용하는 곳
+<ListUp data={{ numb: 2, numb1: 19 }} />
+
+ */
 /*만약 상세페이지를 만들고 싶다면
 1. 라우터 설치 되어 있어야 하고(npm install react-router-dom)
 
