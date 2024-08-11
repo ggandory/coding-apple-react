@@ -17,7 +17,7 @@ function App() {
   ]);
   const [thumb, setThumb] = useState(0);
   const [showImage, setShowImage] = useState(false); // 이미지 표시 여부 상태 추가
-  const posts = "강남 고기 맛집";
+  const post = "강남 고기 맛집";
   const newArray = [...글제목]; //deep copy로써 값공유x 서로 독립적인 값을 가지는 복사이다. (state는 직접 건드리는건 옳지 못함)
   newArray[0] = "여자코트 추천";
   newArray.sort();
